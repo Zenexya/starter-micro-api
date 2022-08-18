@@ -1,6 +1,6 @@
-var http = require('http');
-http.createServer(function (req, res) {
-    console.log(`Just got a request at ${req.url}!`)
-    res.write('Test');
-    res.end();
-}).listen(process.env.PORT || 3000);
+var express = require('express');
+var app = express();
+
+app.all('/', function(req, res) {
+    res.send("Hello World");
+})
